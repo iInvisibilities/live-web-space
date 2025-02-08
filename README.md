@@ -1,0 +1,1 @@
+An session-centric application that allows users to create sessions that are joinable by everyone in which they can place, move and remove html elements which will be broadcasted across all of the session viewers.

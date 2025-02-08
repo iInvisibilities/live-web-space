@@ -1,0 +1,25 @@
+{
+	"name": "websocket_server",
+	"version": "1.0.0",
+	"description": "",
+	"license": "ISC",
+	"author": "",
+	"type": "commonjs",
+	"main": "server.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1"
+	},
+	"dependencies": {
+		"dotenv": "^16.4.7",
+		"redis": "^4.7.0",
+		"socket.io": "^4.8.1",
+		"ws": "^8.18.0"
+	},
+	"optionalDependencies": {
+		"bufferutil": "^4.0.9",
+		"utf-8-validate": "^6.0.5"
+	},
+	"devDependencies": {
+		"ts-node": "^10.9.2"
+	}
+}

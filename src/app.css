@@ -1,0 +1,19 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+.roboto-400 {
+	font-family: 'Roboto', serif;
+	font-optical-sizing: auto;
+	font-weight: 400;
+	font-style: normal;
+	font-variation-settings: 'wdth' 100;
+}
+
+main > * {
+	@apply absolute transition-all duration-100 ease-out;
+}
+
+.grabbing {
+	@apply scale-125 opacity-50;
+}
