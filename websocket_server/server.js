@@ -72,6 +72,7 @@ wss.on('connection', function (socket, request) { return __awaiter(void 0, void 
             socket.on('close', function () {
                 console.log('Admin left, closing system...');
                 wss.close();
+                process_1.default.exit();
             });
             console.log('Admin joined, system should now be up and running!');
             return [2 /*return*/];

@@ -33,6 +33,10 @@ export const createNewSession = async (creator_ip: string): Promise<String> => {
 			return;
 		}
 
+		// max redis session lifespan
+		await redis.expire(new_session_id, 7200);
+		await redis.expire(creator_ip, 7200);
+
 		resolve(new_session_id);
 	});
 };
