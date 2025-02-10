@@ -18,6 +18,12 @@ export const connectToRedis = () => {
 
 export const createNewSession = async (creator_ip: string): Promise<String> => {
 	return new Promise(async (resolve, reject) => {
+		const current_session_count = (await redis.dbsize()) / 2;
+		if (current_session_count >= 100) {
+			reject('Too many sessions are already created, please return back soon!');
+			return;
+		}
+
 		const new_session: WebSession = { creator_ip, viewer_ips: [] };
 		const new_session_id = randomUUID();
 		let session_creation_process = await redis.set(new_session_id, serialize(new_session));
