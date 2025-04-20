@@ -25,12 +25,12 @@ wss.on('connection', async (socket, request) => {
 		const auth_string = request.headers['sec-websocket-protocol'] ?? '';
 
 		if (auth_string == '') {
-			socket.close(1003, 'Are you my sweet sveltekit server?!??');
+			socket.close(1003, 'No auth string provided');
 			return;
 		}
 
 		if (auth_string != SECRET_BRIDGE_KEY) {
-			socket.close(1003, 'You are not my sweet little sveltekit server hush hush!');
+			socket.close(1003, 'Not svelte server!');
 			return;
 		}
 
@@ -47,7 +47,7 @@ wss.on('connection', async (socket, request) => {
 	}
 
 	if (admin_socket == null) {
-		socket.close(1002, "Mr. admin didn't connect yet please wait for the server to fully open!");
+		socket.close(1002, "Admin didn't connect yet please wait for the server to fully open!");
 		return;
 	}
 
